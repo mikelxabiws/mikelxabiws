@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Galderak gehitu</title>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <body>
+        <form id="galderenF" name="galderenF" action="proba.php" onsubmit="return validateMyForm();">
+            <h3>Bete ondorengo formularioa zure galdera igotzeko:</h3> <br/>
+            Sartu zure eposta: <input type="text" id="eposta" placeholder="iabizenaXXX" pattern="[A-Za-z]{3,}[0-9]{3}">@ikasle.ehu 
+            <select>
+                <option value="ehu">.eus</option>
+                 <option value="es">.es</option>
+            </select> <br/><br/>
+            Zure galdera: <input type="text" id="galdera"><br/><br/>
+            Erantzun zuzena: <input type="text" id="erZuzen"><br/><br/>
+            Erantzun okerra: <input type="text" id="erOker1"><br/><br/>
+            Erantzun okerra: <input type="text" id="erOker2"><br/><br/>
+            Erantzun okerra: <input type="text" id="erOker3"><br/><br/>
+            Galderaren zailtasuna:
+			<div class="radiogroup">
+				<input type="radio" id="r1" name="puntuazioa" value="1"> 1 
+				<input type="radio" id="r2" name="puntuazioa" value="2"> 2 
+				<input type="radio" id="r3" name="puntuazioa" value="3"> 3
+				<input type="radio" id="r4" name="puntuazioa" value="4"> 4 
+				<input type="radio" id="r5" name="puntuazioa" value="5"> 5 
+			</div>
+            Galderaren arloa: <input type="text" id="arloa"><br/><br/><br/>
+            <input type="submit" value="Galdera igo"> 
+			<input type="button" value="Ezabatu" onclick="ezabatu()"><br/>
+            
+            <p><input type="button" value="Atzera" name="Atzera" onclick="history.back()" /></p>
+        </form>
+
+        <script>
+            
+			function validateMyForm(){
+				if(($("#eposta").val()!=="")&&($("#galdera").val()!=="")&&($("#erZuzen").val()!=="")&&($("#erOker1").val()!=="")&&($("#erOker2").val()!=="")&&($("#erOker3").val()!=="")&&($("#arloa").val()!=="")&&(($("#r1").is(':checked'))||($("#r2").is(':checked'))||($("#r3").is(':checked'))||($("#r4").is(':checked'))||($("#r5").is(':checked')))){ 
+					return true;
+				}else{
+					alert("Hutsune guztiak betetzea beharrezkoa da!");
+					//event.preventDefault();
+					return false;
+				}
+			}
+			
+			function ezabatu(){
+				$("#eposta").val("");
+				$("#galdera").val("");
+				$("#erZuzen").val("");
+				$("#erOker1").val("");
+				$("#erOker2").val("");
+				$("#erOker3").val("");
+				$("#arloa").val("");
+				$("#r1").prop("checked", false);
+				$("#r2").prop("checked", false);
+				$("#r3").prop("checked", false);
+				$("#r4").prop("checked", false);
+				$("#r5").prop("checked", false);
+				
+			}
+            
+        </script>        
+
+
+    </body>
+</html>
