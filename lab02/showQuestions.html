@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    table.paleBlueRows {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #FFFFFF;
+  width: 400px;
+  height: 100px;
+  text-align: center;
+}
+table.paleBlueRows td, table.paleBlueRows th {
+  border: 2px solid #000000;
+  padding: 3px 2px;
+}
+table.paleBlueRows tbody td {
+  font-size: 13px;
+}
+table.paleBlueRows tr:nth-child(even) {
+  background: #D0E4F5;
+}
+table.paleBlueRows thead {
+  background: #0B6FA4;
+  border-bottom: 2px solid #000000;
+}
+table.paleBlueRows thead th {
+  font-size: 17px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #000000;
+}
+table.paleBlueRows thead th:first-child {
+  border-left: none;
+}
+
+table.paleBlueRows tfoot td {
+  font-size: 14px;
+}
+
+    </style>
+  </head>
+  <body>
+  
+  <?php
+
+
+$host='localhost';
+$user='root';
+$pass='';
+$db='quiz';
+
+$con=mysqli_connect($host, $user, $pass, $db);
+if(!$con){
+	echo 'Ezin izan da konexioa egin datu basearekin.';
+	die;
+}
+
+$sql = "SELECT * FROM `questions`";
+$result = $con->query($sql);
+
+echo"<table class="paleBlueRows">";
+echo"<thead>";
+echo"<tr>";
+echo"<th>id</th>";
+echo"<th>Galdera</th>";
+echo"<th>Erantzun zuzena</th>";
+echo"<th>Zailtasuna</th>";
+echo"<th>Arloa</th>";
+echo"</tr>";
+echo"</thead>";
+echo"<tbody>";
+
+
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $id=$row["id"];
+		$eposta=$row["eposta"];
+		$galdera=$row["galdera"];
+		$zailtasuna=$row["zailtasuna"];
+		$arloa=$row["arloa"];
+		echo"<tr>";
+		echo"<td>'$id'</td>";
+		echo"<td>'$eposta'</td>";
+		echo"<td>'$galdera'</td>";
+		echo"<td>'$zailtasuna'</td>";
+		echo"<td>'$arloa'</td>";
+		echo"<tr>";
+	}
+} else {
+    echo "0 results";
+}
+
+echo"<tbody>";
+echo"</table>";
+
+
+$con->close();
+
+?>
+  
+  </body>
+</html>
+
+
+
