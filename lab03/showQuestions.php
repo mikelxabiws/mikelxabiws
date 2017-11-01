@@ -3,6 +3,8 @@
 $host='localhost';
 $user='id3109760_mikelxabiws';
 $pass='#ws2017#';
+//$user='root';
+//$pass='';
 $db='id3109760_quiz';
 
 $con=mysqli_connect($host, $user, $pass, $db);
@@ -52,9 +54,9 @@ echo"<tbody>";
 echo"</table>";
 
 echo "<br />\n";echo "<br />\n";
-echo "<a href='layout.html'>Layout-era itzuli</a>";
+echo "<a href='layoutErreg.html'>Layout-era itzuli</a>";
 echo "<br />\n";
-echo "<a href='addQuestion.html'>Galdera bat igo</a>";
+echo "<a href='addQuestion.php'>Galdera bat igo</a>";
 
 $con->close();
 
