@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<assessmentItems>
+
+	<assessmentItem complexity="3" subject="Politika">
+		<itemBody> 
+			<p>Zein herrialdek lortu zuen independentzia 1964ko abenduaren 12an?</p>
+		</itemBody>
+		<correctResponse>
+			<value>Kenyak</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Txinak</value>
+			<value>Portugalek</value>
+			<value>Kataluniak</value>
+		</incorrectResponses>
+	</assessmentItem>
+	
+	<assessmentItem complexity="4" subject="Zientzia eta teknologia">
+		<itemBody> 
+			<p>Zer motatakoak dira Gipuzkoako armarrian agertzen diren ur gaineko hiru zuhaitzak?</p>
+		</itemBody>
+		<correctResponse>
+			<value>Izei zuria</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Intxaurrondoa</value>
+			<value>Ereinotza</value>
+			<value>Hagin arrunta</value>
+		</incorrectResponses>
+	</assessmentItem>
+	
+	<assessmentItem complexity="5" subject="Geografia eta historia">
+		<itemBody>
+			<p>Zer inauguratu zen 1937ko maiatzaren 27an?</p>
+		</itemBody>
+		<correctResponse>
+			<value>Eiffel dorrea</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Txinako Harresi Handia</value>
+			<value>Empire State eraikina</value>
+			<value>Golden Gate zubia</value>
+		</incorrectResponses>
+	</assessmentItem>
+
+	<assessmentItem complexity="5" subject="Euskara eta literatura">
+		<itemBody>
+			<p>Nolako aditza da "dagik"?</p>
+		</itemBody>
+		<correctResponse>
+			<value>Hitanokoa</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Alokutiboa</value>
+			<value>Perifrastikoa</value>
+			<value>Aurrekoak okerrak dira</value>
+		</incorrectResponses>
+	</assessmentItem>
+	
+	<assessmentItem complexity="1" subject="Zientzia eta teknologia">
+		<itemBody>
+			<p>Zenbateko altuera du Ogoño lurmuturrak?</p>
+		</itemBody>
+		<correctResponse>
+			<value>190 metro</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>2300 metro</value>
+			<value>215 metro</value>
+			<value>6435 metro</value>
+		</incorrectResponses>
+	</assessmentItem>
+	
+	<assessmentItem complexity="3" subject="Euskara eta literatura">
+		<itemBody>
+			<p>Iturenen "itzotzila" esaten dutenean, zer adierazi nahi dute?</p>
+		</itemBody>
+		<correctResponse>
+			<value>Urtarrila</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Urria</value>
+			<value>Otsaila</value>
+			<value>Martxoa</value>
+		</incorrectResponses>
+	</assessmentItem>
+	
+	<assessmentItem complexity="3" subject="Geografia eta historia">
+		<itemBody>
+			<p>Noiz eskuratu zuen Isabel II.ak Ingalaterrako koroa?</p>
+		</itemBody>
+		<correctResponse>
+			<value>1953an</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>1847an</value>
+			<value>1958an</value>
+			<value>1969an</value>
+		</incorrectResponses>
+	</assessmentItem>
+	
+	<assessmentItem complexity="2" subject="Historia">
+		<itemBody>
+			<p>Trevillek zer kargu dauka?</p>
+		</itemBody>
+		<correctResponse>
+			<value>Markesa</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Kontea</value>
+			<value>Errege</value>
+			<value>Printzea</value>
+		</incorrectResponses>
+	</assessmentItem>
+	
+	<assessmentItem complexity="1" subject="Geografia eta historia">
+		<itemBody>
+			<p>Nola deitzen zaio ere Donostiari?</p>
+		</itemBody>
+		<correctResponse>
+			<value>San Sebastian</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Iruña</value>
+			<value>Zarautz</value>
+			<value>Urnieta</value>
+		</incorrectResponses>
+	</assessmentItem>
+	
+</assessmentItems>
