@@ -9,36 +9,38 @@
 	
 		
         <form id="galderenF" name="galderenF" action="" onsubmit="return validateMyForm();" method="post">
-            <h3>Bete ondorengo formularioa zure galdera igotzeko:</h3> <br/>
-            Sartu zure eposta: <input type="text" id="eposta" name="eposta" placeholder="iabizenaXXX@ikasle.ehu.eus" pattern="[A-Za-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s"><br/><br/>
-            Zure galdera: <input type="text" id="galdera" name="galdera"><br/><br/>
-            Erantzun zuzena: <input type="text" id="erZuzen" name="erZuzen"><br/><br/>
-            Erantzun okerra: <input type="text" id="erOker1" name="erOker1"><br/><br/>
-            Erantzun okerra: <input type="text" id="erOker2" name="erOker2"><br/><br/>
-            Erantzun okerra: <input type="text" id="erOker3" name="erOker3"><br/><br/>
-            Galderaren zailtasuna:
-			<div class="radiogroup">
-				<input type="radio" id="r1" name="puntuazioa" value="1" checked> 1 
-				<input type="radio" id="r2" name="puntuazioa" value="2"> 2 
-				<input type="radio" id="r3" name="puntuazioa" value="3"> 3
-				<input type="radio" id="r4" name="puntuazioa" value="4"> 4 
-				<input type="radio" id="r5" name="puntuazioa" value="5"> 5 
-			</div><br/>
-            Galderaren arloa: <input type="text" id="arloa" name="arloa"><br/><br/><br/>
-            <input type="submit" value="Galdera igo"> 
-			<input type="button" value="Ezabatu" name="Ezabatu" onclick="ezabatu()"><br/>
-            
-            <p><a href='layoutErreg.html'>Layout-era itzuli</a></p>
-        </form>
+			<legend>GALDERA GEHITU</legend>
+				<fieldset>
+				<h3>Bete ondorengo formularioa zure galdera igotzeko:</h3> <br/>
+				Sartu zure eposta: <input type="text" id="eposta" name="eposta" placeholder="iabizenaXXX@ikasle.ehu.eus" pattern="[A-Za-z]{3,}[0-9]{3}@ikasle\.ehu\.eu?s"><br/><br/>
+				Zure galdera: <input type="text" id="galdera" name="galdera"><br/><br/>
+				Erantzun zuzena: <input type="text" id="erZuzen" name="erZuzen"><br/><br/>
+				Erantzun okerra: <input type="text" id="erOker1" name="erOker1"><br/><br/>
+				Erantzun okerra: <input type="text" id="erOker2" name="erOker2"><br/><br/>
+				Erantzun okerra: <input type="text" id="erOker3" name="erOker3"><br/><br/>
+				Galderaren zailtasuna:
+				<div class="radiogroup">
+					<input type="radio" id="r1" name="puntuazioa" value="1" checked> 1 
+					<input type="radio" id="r2" name="puntuazioa" value="2"> 2 
+					<input type="radio" id="r3" name="puntuazioa" value="3"> 3
+					<input type="radio" id="r4" name="puntuazioa" value="4"> 4 
+					<input type="radio" id="r5" name="puntuazioa" value="5"> 5 
+				</div><br/>
+				Galderaren arloa: <input type="text" id="arloa" name="arloa"><br/><br/><br/>
+				<input type="button" value="Galdera igo" name="galderaIgo" id="galderaIgo" onclick="validateMyForm()"> 
+				<input type="button" value="Ezabatu" name="Ezabatu" onclick="ezabatu()"><br/>
+				
+			</fieldset>
+		</form>
 
         <script>
             
 			function validateMyForm(){
 				if(($("#eposta").val()!=="")&&($("#galdera").val()!=="")&&($("#erZuzen").val()!=="")&&($("#erOker1").val()!=="")&&($("#erOker2").val()!=="")&&($("#erOker3").val()!=="")&&($("#arloa").val()!=="")&&(($("#r1").is(':checked'))||($("#r2").is(':checked'))||($("#r3").is(':checked'))||($("#r4").is(':checked'))||($("#r5").is(':checked')))){ 
+					document.getElementById("galderenF").submit();
 					return true;
 				}else{
 					alert("Hutsune guztiak betetzea beharrezkoa da!");
-					//event.preventDefault();
 					return false;
 				}
 			}
@@ -51,11 +53,11 @@
 				$("#erOker2").val("");
 				$("#erOker3").val("");
 				$("#arloa").val("");
+				$("#r1").prop("checked", true);
 				$("#r2").prop("checked", false);
 				$("#r3").prop("checked", false);
 				$("#r4").prop("checked", false);
 				$("#r5").prop("checked", false);
-				
 			}
 			
             
@@ -67,28 +69,10 @@
 		
 		if(isset($_POST['eposta']) && isset($_POST['galdera']) && isset($_POST['erZuzen']) && isset($_POST['erOker1']) && isset($_POST['erOker2']) && isset($_POST['erOker3']) && isset($_POST['arloa'])){
 
-$host='localhost';
-$user='id3109760_mikelxabiws';
-$pass='#ws2017#';
-//$user='root';
-//$pass='';
-//$db='quiz';
-$db='id3109760_quiz';
+	include('connection.php');//Datu basearekin konexioa egin
+	echo "------------------------------------------------------------------";
+	echo "<br />\n";
 
-$con=mysqli_connect($host, $user, $pass, $db);
-if($con){
-	echo "<br />\n";
-	echo 'Datu basearekin konexioa egin da';
-	echo "<br />\n";
-	echo "------------------------------------------------------------------";
-	echo "<br />\n";
-}else{
-	echo "------------------------------------------------------------------";
-	echo "<br />\n";
-	echo 'Ezin izan da konexioa egin datu basearekin, galdera igotzen berriz saiatzeko egin klik ';
-	echo "<a href='addQuestion.html'>hemen</a>";
-	die;
-}
 
 $eposta=$_POST["eposta"];
 $galdera=$_POST["galdera"];
