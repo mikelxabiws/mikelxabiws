@@ -1,4 +1,13 @@
-<?PHP session_start ();?>
+<?php
+include_once 'sesioa.php';
+if (isset($_SESSION['eposta'])){
+	echo 'Jada logeatuta zaude kontu batekin. Beste kontu batekin login egiteko lehenengo logout egin ezazu.';
+	echo '</br><p><a href="layout.php">Layout-era bueltatu</a></p>';
+	exit;
+}
+	
+?>
+
 
 <!DOCTYPE html>
 <html>

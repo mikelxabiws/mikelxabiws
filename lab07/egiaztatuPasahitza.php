@@ -3,7 +3,7 @@ require_once('lib/nusoap.php');
 require_once('lib/class.wsdlcache.php');
 
 
-$ns="zerbitzua";
+$ns="https://mikelxabiws.000webhostapp.com/lab7/egiaztatuPasahitza.php?wsdl";
 $server = new soap_server();
 $server->configureWSDL("passservice", $ns);
 $server->wsdl->schemaTargetNamespace=$ns; 
@@ -29,4 +29,4 @@ $server->register("getPasahitzaZuzena",
  
 $HTTP_RAW_POST_DATA = isset($HTTP_RAW_POST_DATA) ? $HTTP_RAW_POST_DATA : '';
 @$server->service(file_get_contents("php://input"));
-
+?>

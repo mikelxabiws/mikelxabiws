@@ -61,9 +61,20 @@ if (!(isset($_SESSION['eposta']))){
     </header>
 	<nav class='main' id='n1' role='navigation'>
 		<span><a href='layout.php'>Home</a></span>
+		
+		<?php
+				if($_SESSION['eposta']!='web000@ehu.es'){
+					
+			?>
+		
 		<span><a href='addQuestion.php'>Add questions</a><span>
 		<span><a href='showQuestions.php'>See questions</a><span>
 		<span><a href='showXMLQuestions.php'>See XML questions</a><span>
+		
+		<?php
+				}
+		?>
+		
 		<span><a href='/quizzes'>Quizzes</a></span>
 		<span><a href='credits.html'>Credits</a></span>
 		<span><a></a></span>

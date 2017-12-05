@@ -1,3 +1,16 @@
+<?php
+	
+	include_once 'sesioa.php';	
+	if($_SESSION['eposta']=='web000@ehu.es'){
+		echo 'Orrialde hau ez dago atzigarri irakasleentzako. Galderak igotzeko ikasle bezala erregistratu.';
+		echo '</br><p><a href="layout.php">Layout-era bueltatu</a></p>';
+		exit;
+	}
+					
+?>
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,6 +45,8 @@
 				
 			</fieldset>
 		</form>
+		</br>
+		<p><a href='layout.php'>Layout-era bueltatu</a></p>
 
         <script>
             

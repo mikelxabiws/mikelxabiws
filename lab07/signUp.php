@@ -1,3 +1,14 @@
+<?php
+include_once 'sesioa.php';
+if (isset($_SESSION['eposta'])){
+	echo 'Logeatuta zaude kontu batekin. Beste kontu bat erregistratzeko lehenengo logout egin ezazu.';
+	echo '</br><p><a href="layout.php">Layout-era bueltatu</a></p>';
+	exit;
+}
+	
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +36,7 @@
 		<div id="pasahitzaEremua">
 			<a>Pasahitzari buruz...</a>
 		</div></br>
-		<p><a href='layout.html'>Layout-era bueltatu</a></p>
+		<p><a href='layout.php'>Layout-era bueltatu</a></p>
 		
         <script type="text/javascript" language = "javascript">
 		
