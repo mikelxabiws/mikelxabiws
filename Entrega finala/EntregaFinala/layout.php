@@ -2,8 +2,7 @@
 
 if(isset($_SESSION['pasahitzaAldatua'])){
 	unset($_SESSION['pasahitzaAldatua']);
-	unset($_SESSION['pasahitzaAldatzekoEposta']);
-	echo "<script type='text/javascript'>alert('Pasahitza zuzenki aldatu da. Layout-era itzuliko zara eta bertan login egin ahal izango duzu.')</script>";		
+	unset($_SESSION['pasahitzaAldatzekoEposta']);		
 }
 
 ?>

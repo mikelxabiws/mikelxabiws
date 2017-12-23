@@ -6,7 +6,6 @@ if (isset($_SESSION['eposta'])){
 	exit;
 }
 ?>
-	
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,6 +40,8 @@ if (isset($_SESSION['eposta'])){
 		<?php 
 			
 			include('connection.php');//Datu basearekin konexioa egin
+			
+			
 			
 			if (isset($_POST['eposta'])){
 				
@@ -87,7 +88,10 @@ if (isset($_SESSION['eposta'])){
 					while($row = $result->fetch_assoc()) {
 						if($row["segurtasunErantzuna"]===$erantzuna){
 							$_SESSION['pasahitzaAldatzekoEposta']=$eposta;
-							header("Location: pasahitzaBerrezarri2.php");exit;
+							echo '<script type="text/javascript">document.getElementById("div2").innerHTML = "<legend>ERANTZUN ZUZENA</legend><fieldset>Sartutako erantzuna zuzena da.';
+							echo "<p><a href='pasahitzaBerrezarri2.php'>Pasahitza aldatzeko egin klik hemen</a></p>";
+							echo '</fieldset>"</script>';
+							
 						}else{
 							echo "<script type='text/javascript'>document.getElementById('div2').innerHTML = '<legend>ERANTZUN OKERRA</legend><fieldset>Sartutako erantzuna ez da zuzena. Ezingo duzu pasahitza berrezarri.</fieldset>'</script>";
 						}

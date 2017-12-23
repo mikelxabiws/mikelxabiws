@@ -11,11 +11,9 @@ if (!(isset($_SESSION['pasahitzaAldatzekoEposta']))){
 	exit;
 }
 $eposta = $_SESSION['pasahitzaAldatzekoEposta'];
-echo "<script type='text/javascript'>alert('Erantzuna zuzena da. Orain zure pasahitza aldatu ahalko duzu. Eposta: " . $eposta . "')</script>";
 							
 
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -98,21 +96,27 @@ echo "<script type='text/javascript'>alert('Erantzuna zuzena da. Orain zure pasa
 </html>	
 		<?php 
 			
+			function zifratu($input){    
+				$output = password_hash($input,PASSWORD_DEFAULT);
+				return $output;
+			}
+			
 			if (isset($_POST['pass1']) && isset($_POST['pass2'])){
 				
 				include('connection.php');//Datu basearekin konexioa egin
 				
 				$pasahitza = $_POST['pass1'];
 				
-				$sql = "UPDATE erabiltzaile SET pasahitza='".$pasahitza."' WHERE eposta='".$eposta."'";
+				$zif=zifratu($pasahitza);
+				
+				$sql = "UPDATE erabiltzaile SET pasahitza='".$zif."' WHERE eposta='".$eposta."'";
 
 				if ($con->query($sql) === TRUE) {
 					$_SESSION['pasahitzaAldatua']=true;
-					header("Location: layout.php");
+					echo "<script type='text/javascript'>alert('Pasahitza zuzenki aldatu da. Layout-era bueltatu login egiteko.')</script>";
 				} else {
 					$_SESSION['pasahitzaAldatzekoEposta']=$eposta;
 					echo "<script type='text/javascript'>alert('Errorea pasahitza aldatzean. Saiatu berriro.')</script>";
-					header("Location: pasahitzaBerrezarri2.php");
 				}
 				
 				
